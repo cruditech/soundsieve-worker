@@ -8,7 +8,7 @@ description = "Soundsieve source separation with AWS EB Python worker based on F
 authors = ["Erin Akarice <erinakarice@gmail.com>", "Nico de Vos <njdevos@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "~3.6"
+python = "~3.9"
 boto3 = "*"
 Flask = "*"
 
