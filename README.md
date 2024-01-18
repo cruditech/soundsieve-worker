@@ -7,6 +7,7 @@ Poll SQS for messages→Process sequentially→Upload stems to S3, send notifica
 <p align="center">
 <img src='img/soundsieveworkersystemdesign.png' style='width:415px' />
 </p>
+
 ## Business Logic
 1. `uri`   ⃪ pop off S3 audio file uri from SQS
 1. `file`   ⃪ download `uri` to memory
