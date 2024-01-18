@@ -13,3 +13,8 @@ Free up web resources by queuing long-running work, and receiving them here, whe
 1. `file`   ⃪ download `uri` to memory
 1. `stem1, stem2,…, stemN`   ⃪ `spleeter.separator.Separator.separate(file)`
 1. `user.uploadURI.stemsURI`   ⃪ s3.upload('stem1', 'stem2',…, 'stemN')
+<style>
+td, th {
+   border: none!important;
+}
+</style>
