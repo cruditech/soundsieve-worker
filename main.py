@@ -3,6 +3,8 @@ import json
 
 import boto3
 from botocore.exceptions import ClientError
+from spleeter.separator import Separator
+
 try:
     from dotenv import load_dotenv
     load_dotenv()
@@ -30,12 +32,19 @@ def inject_doppler_secrets(session):
         # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
         raise e
 
-
     # secret = get_secret_value_response['SecretString']
     os.environ = {**os.environ, **get_secret_value_response}
 
 def dummy_function(message):
     print("Received message:", message)
+    process_audio(json.loads(message)['target_audio_uri'])
+
+def process_audio(target_audio_uri)
+    # Using embedded configuration.
+    separator = Separator('spleeter:2stems')
+
+    # Using custom configuration file.
+    # separator = Separator('/path/to/config.json')
 
 def poll_sqs(queue_url, session):
     sqs = session.client('sqs')
