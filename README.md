@@ -1,11 +1,11 @@
 # Sound Sieve Worker
 ## Purpose
-Free up web resources from long-running work by queue files and sending them here, where source separation is applied.
+Free up web resources by queuing long-running work, and receiving them here, where source separation is applied.
 
 ## System Design
-Poll SQS for messages→Process sequentially→Upload stems to S3, send notification upon completion.
-<p align="center">
-<img src='img/soundsieveworkersystemdesign.png' style='width:415px' />
+&nbsp; |&nbsp; 
+-|-
+→Poll SQS for messages<br>→Process sequentially<br>→Upload stems to S3<br>→Send notification upon completion.|<p align="center"><img src='img/soundsieveworkersystemdesign.png' style='width:415px' />
 </p>
 
 ## Business Logic
