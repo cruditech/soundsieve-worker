@@ -4,7 +4,7 @@ Free up web resources from long-running work by queue files and sending them her
 
 ## System Design
 Poll SQS for messages→Process sequentially→Upload stems to S3, send notification upon completion.
-![Sound Sieve worker system design](img/soundsieveworkersystemdesign.png)
+<img src='img/soundsieveworkersystemdesign.png' style='width:415px' />
 
 ## Business Logic
 1. `uri`   ⃪ pop off S3 audio file uri from SQS
