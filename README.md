@@ -5,7 +5,7 @@ Free up web resources by queuing long-running work, and receiving them here, whe
 ## System Design
 <table>
    <tr>
-      <td style='text-align:center;'><h5>↓</h5><br>Poll SQS for messages<br><br><h5>↓</h5><br>Process sequentially<br><br><h5>↓</h5><br>Upload stems to S3<br><br><h5>↓</h5><br>Send notification upon completion.
+      <td><h5>↓</h5><br>Poll SQS for messages<br><br><h5>↓</h5><br>Process sequentially<br><br><h5>↓</h5><br>Upload stems to S3<br><br><h5>↓</h5><br>Send notification upon completion.
       </td>
       <td>
          <p align="center">
