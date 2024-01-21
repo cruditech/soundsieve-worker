@@ -1,9 +1,10 @@
-import os
 import json
+import os
+import time
 
 import boto3
 from botocore.exceptions import ClientError
-from spleeter.separator import Separator
+# from spleeter.separator import Separator
 
 try:
     from dotenv import load_dotenv
@@ -39,7 +40,7 @@ def dummy_function(message):
     print("Received message:", message)
     process_audio(json.loads(message)['target_audio_uri'])
 
-def process_audio(target_audio_uri)
+def process_audio(target_audio_uri):
     # Using embedded configuration.
     separator = Separator('spleeter:2stems')
 
@@ -49,6 +50,7 @@ def process_audio(target_audio_uri)
 def poll_sqs(queue_url, session):
     sqs = session.client('sqs')
     while True:
+        print('polling')
         response = sqs.receive_message(
             QueueUrl=queue_url,
             MaxNumberOfMessages=1,
@@ -69,5 +71,4 @@ if __name__ == '__main__':
         region_name='us-east-1'
     )
     inject_doppler_secrets(session)
-    queue_url = 'https://sqs.us-east-1.amazonaws.com/106022474758/SieveQueue'
-    poll_sqs(queue_url, session)
+    poll_sqs(os.environ['AWS_SQS_URL'], session)
